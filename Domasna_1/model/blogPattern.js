@@ -1,15 +1,14 @@
-const mongoose = require("mongoose");
 // mongoose se povikuva 
-
+const mongoose = require("mongoose");
 
 // se kreira patternot na shemata 
 const blogPattern = new mongoose.Schema({
     title: {
-        type:String,
+        type: String,
         required: [true]
     },
     description: {
-        type:String,
+        type: String,
         required: [true]
     },
     rating: {
@@ -17,14 +16,14 @@ const blogPattern = new mongoose.Schema({
         default: 3,
     },
     time: {
-        type:Date,
+        type: Date,
         default: Date.now
     },
     author: {
         type:String
     }
-})
+});
 
 
 // se kreira imeto blogovi da ja zema dadenata sema 
-module.exports = mongoose.model("Blogovi", blogPattern);
+module.exports = mongoose.model("Blog", blogPattern);
